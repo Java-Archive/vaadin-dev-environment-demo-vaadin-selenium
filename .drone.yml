@@ -28,7 +28,5 @@ matrix:
 services:
   docker:
     image: docker:dind
-    dns:
-      - 172.17.0.6
     command: [ "--storage-driver=vfs", "--tls=false" ]
 +   privileged: true
