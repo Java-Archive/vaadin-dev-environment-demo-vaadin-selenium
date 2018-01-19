@@ -1,6 +1,6 @@
 workspace:
   base: /drone/src
-  path: vaadin-developer-demo-corejava
+  path: vaadin-developer-demo-vaadin-selenium
 
 pipeline:
   build:
