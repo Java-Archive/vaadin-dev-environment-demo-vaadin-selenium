@@ -17,7 +17,11 @@ public class MyUITest extends BaseSeleniumTest {
     if (!driver.isPresent()) Assertions.fail("WebDriver not available");
 
     driver.ifPresent(d -> {
-      d.get("http://127.0.0.1:8080/");
+
+      final String localeIP = localeIP().get();
+      logger().warning("Using the following external IP " + localeIP);
+
+      d.get("http://localeIP:8080/");
 //      d.get("http://192.168.0.228:8080/"); // grap external IP at runtime
 
 //      Assert.assertNotNull(button(d));

@@ -138,6 +138,16 @@
       <version>${selenium.version}</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>org.rapidpm</groupId>
+      <artifactId>rapidpm-functional-reactive</artifactId>
+      <version>0.1.0</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.rapidpm</groupId>
+      <artifactId>rapidpm-dependencies-core-logger</artifactId>
+    </dependency>
 
     <!--Logging-->
   </dependencies>
