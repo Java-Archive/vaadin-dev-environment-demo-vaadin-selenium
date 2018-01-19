@@ -19,9 +19,9 @@ public class MyUITest extends BaseSeleniumTest {
     driver.ifPresent(d -> {
 
       final String localeIP = localeIP().get();
-      logger().warning("Using the following external IP " + localeIP);
+      logger().info("Using the following external IP " + localeIP);
 
-      d.get("http://localeIP:8080/");
+      d.get("http://" + localeIP + ":8080/");
 //      d.get("http://192.168.0.228:8080/"); // grap external IP at runtime
 
 //      Assert.assertNotNull(button(d));
