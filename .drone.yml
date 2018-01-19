@@ -10,7 +10,7 @@ pipeline:
 #    links:
 #      - selenoid-server
     commands:
-      - export DOCKER_HOST_IP_NEXUS=DOCKER_HOST_IP_NEXUS=
+      - export DOCKER_HOST_IP_NEXUS=$DOCKER_HOST_IP_NEXUS
       - mkdir /root/.m2
       - cp /drone/src/vaadin-developer-demo-vaadin-selenium/settings.xml /root/.m2/settings.xml
       - mvn clean
