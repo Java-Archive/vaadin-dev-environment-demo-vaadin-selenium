@@ -28,7 +28,7 @@ public class BaseSeleniumTest extends BaseTest {
     browser.setVersion("60.0");
 
     driver = Optional.of(new RemoteWebDriver(
-        URI.create("http://192.168.0.100:4444/wd/hub").toURL(),
+        URI.create("http://drone-server:4444/wd/hub").toURL(),
         browser
     ));
   }
