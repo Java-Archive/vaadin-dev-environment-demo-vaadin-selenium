@@ -20,6 +20,9 @@ import static io.undertow.servlet.Servlets.servlet;
  */
 public class Main {
 
+  private Main() {
+  }
+
   public static final String CONTEXT_PATH = "/";
 
   public static void start() {
