@@ -10,8 +10,6 @@ pipeline:
     environment:
       - IP_NEXUS=172.17.0.5
       - IP_SELENOID=172.17.0.3
-#    links:
-#      - selenoid-server
     commands:
       - mkdir /root/.m2
       - cp /drone/src/vaadin-developer-demo-vaadin-selenium/settings.xml /root/.m2/settings.xml
