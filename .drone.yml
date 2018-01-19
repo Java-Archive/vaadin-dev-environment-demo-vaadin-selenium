@@ -12,6 +12,7 @@ pipeline:
     commands:
       - mkdir /root/.m2
       - cp /drone/src/vaadin-developer-demo-vaadin-selenium/settings.xml /root/.m2/settings.xml
+      - cp /drone/src/vaadin-developer-demo-vaadin-selenium/resolv.conf /etc/resolv.conf
       - mvn clean
       - mvn install
 
