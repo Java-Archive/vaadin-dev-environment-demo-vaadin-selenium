@@ -1,7 +1,7 @@
 package junit.org.rapidpm.vaadin.helloworld.server;
 
-import org.junit.After;
-import org.junit.Before;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -20,7 +20,7 @@ public class BaseSeleniumTest extends BaseTest {
   protected Optional<WebDriver> driver;
 
   @Override
-  @Before
+  @BeforeEach
   public void setUp() throws Exception {
     super.setUp();
     DesiredCapabilities browser = new DesiredCapabilities();
@@ -28,14 +28,14 @@ public class BaseSeleniumTest extends BaseTest {
     browser.setVersion("60.0");
 
     driver = Optional.of(new RemoteWebDriver(
-        URI.create("http://selenoid-server:4444/wd/hub").toURL(),
+        URI.create("http://192.168.0.100:4444/wd/hub").toURL(),
         browser
     ));
   }
 
 
   @Override
-  @After
+  @AfterEach
   public void tearDown() throws Exception {
     // kill webdriver / Browser here
     driver.ifPresent(d -> {
