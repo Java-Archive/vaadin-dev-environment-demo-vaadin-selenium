@@ -7,10 +7,11 @@ pipeline:
     image: maven:${JDK_VERSION}
 #    image: maven:3.5-jdk-8
     pull: true
+    environment:
+      - DOCKER_HOST_IP_NEXUS=192.168.0.100
 #    links:
 #      - selenoid-server
     commands:
-      - export DOCKER_HOST_IP_NEXUS=$docker_host_ip_nexus
       - mkdir /root/.m2
       - cp /drone/src/vaadin-developer-demo-vaadin-selenium/settings.xml /root/.m2/settings.xml
       - mvn clean
