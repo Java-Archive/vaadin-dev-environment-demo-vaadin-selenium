@@ -8,7 +8,7 @@ pipeline:
 #    image: maven:3.5-jdk-8
     pull: true
     environment:
-      - DOCKER_HOST_IP_NEXUS=192.168.0.100
+      - DOCKER_HOST_IP_NEXUS=172.19.0.2
 #    links:
 #      - selenoid-server
     commands:
