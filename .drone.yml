@@ -6,17 +6,15 @@ pipeline:
   build:
     image: maven:${JDK_VERSION}
 #    image: maven:3.5-jdk-8
-    dns:
-      - 172.17.0.6
     pull: true
     environment:
       - IP_NEXUS=172.17.0.5
-      - IP_SELENOID=172.17.0.3
+#      - IP_SELENOID=172.17.0.3
     commands:
       - mkdir /root/.m2
       - cp /drone/src/vaadin-developer-demo-vaadin-selenium/settings.xml /root/.m2/settings.xml
       - mvn clean
-      - mvn install
+      - mvn -DIP_SELENOID=172.17.0.3 install
 
 matrix:
   JDK_VERSION:
@@ -27,8 +25,8 @@ matrix:
 #  - 3.5-ibmjava-8 # missing jdeps ;-)
 #  - 3.5-jdk-9
 
-services:
-  docker:
-    image: docker:dind
-#    command: [ "--storage-driver=vfs", "--tls=false" ]
-+   privileged: true
+#services:
+#  docker:
+#    image: docker:dind
+##    command: [ "--storage-driver=vfs", "--tls=false" ]
+#+   privileged: true
