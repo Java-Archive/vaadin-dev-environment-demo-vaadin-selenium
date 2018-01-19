@@ -1,13 +1,6 @@
 package org.rapidpm.vaadin.helloworld.server;
 
 
-import static io.undertow.Handlers.redirect;
-import static io.undertow.servlet.Servlets.servlet;
-
-import java.util.Optional;
-
-import javax.servlet.ServletException;
-
 import io.undertow.Handlers;
 import io.undertow.Undertow;
 import io.undertow.server.HttpHandler;
@@ -15,6 +8,12 @@ import io.undertow.server.handlers.PathHandler;
 import io.undertow.servlet.Servlets;
 import io.undertow.servlet.api.DeploymentInfo;
 import io.undertow.servlet.api.DeploymentManager;
+
+import javax.servlet.ServletException;
+import java.util.Optional;
+
+import static io.undertow.Handlers.redirect;
+import static io.undertow.servlet.Servlets.servlet;
 
 /**
  *
@@ -46,7 +45,8 @@ public class Main {
                   .addServlets(
                       servlet(
                           MyProjectServlet.class.getSimpleName(),
-                          MyProjectServlet.class).addMapping("/*")
+                          MyProjectServlet.class
+                      ).addMapping("/*")
                   );
 
     DeploymentManager manager = Servlets
