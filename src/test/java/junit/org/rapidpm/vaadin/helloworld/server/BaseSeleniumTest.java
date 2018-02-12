@@ -65,6 +65,7 @@ public class BaseSeleniumTest extends BaseTest {
     browser.setBrowserName("chrome");
     browser.setVersion("63.0");
 
+    //running local - you have to select your selenoid service
     final String url = "http://" + System.getProperty("IP_SELENOID", "selenoid.rapidpm.org") + ":4444/wd/hub";
     logger().info("using this url for selenoid : " + url);
     driver = Optional.of(new RemoteWebDriver(
