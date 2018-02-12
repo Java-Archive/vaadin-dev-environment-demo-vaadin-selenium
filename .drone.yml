@@ -12,7 +12,7 @@ pipeline:
       - mkdir /root/.m2
       - cp /drone/src/vaadin-developer-demo-vaadin-selenium/settings.xml /root/.m2/settings.xml
       - mvn clean
-      - mvn -DIP_SELENOID=172.17.0.3 install
+      - mvn install
 
 matrix:
   JDK_VERSION:
