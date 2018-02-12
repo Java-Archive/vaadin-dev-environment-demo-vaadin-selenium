@@ -63,9 +63,9 @@ public class BaseSeleniumTest extends BaseTest {
     super.setUp();
     DesiredCapabilities browser = new DesiredCapabilities();
     browser.setBrowserName("chrome");
-    browser.setVersion("60.0");
+    browser.setVersion("63.0");
 
-    final String url = "http://" + System.getProperty("IP_SELENOID", "selenoid-server") + ":4444/wd/hub";
+    final String url = "http://" + System.getProperty("IP_SELENOID", "selenoid.rapidpm.org") + ":4444/wd/hub";
     logger().info("using this url for selenoid : " + url);
     driver = Optional.of(new RemoteWebDriver(
         URI.create(url).toURL(),
