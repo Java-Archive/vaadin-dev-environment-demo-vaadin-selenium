@@ -10,7 +10,7 @@ pipeline:
 #      - IP_NEXUS=172.17.0.5
     commands:
       - mkdir /root/.m2
-      - cp /drone/src/vaadin-developer-demo-vaadin-selenium/settings.xml /root/.m2/settings.xml
+      - cp /drone/src/vaadin-developer-demo-vaadin-selenium/_data/nexus/settings.xml /root/.m2/settings.xml
       - mvn clean
       - mvn install
 
